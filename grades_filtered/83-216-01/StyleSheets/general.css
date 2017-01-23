@@ -1,0 +1,29 @@
+<style type="text/css">
+<!--
+tr { FONT-FAMILY:"Arial";} 
+tr {Font-size : 12px;}
+tr {COLOR: #0E3070 }
+
+td {COLOR: #0E3070;}
+td {Font-size : 12px;}
+td { FONT-FAMILY: "Arial";} 
+
+td.big {COLOR: #300E83;}
+td.big {Font-size : 14px;}
+td.big { FONT-FAMILY: "Arial";} 
+
+
+a.st:link    {FONT-SIZE: 12px;COLOR: #0E3070 ;text-decoration: erline;}
+a.st:visited {FONT-SIZE: 12px;COLOR: #0E3070 ;text-decoration: underline;}
+a.st:hover   {FONT-SIZE: 12px;COLOR: #D18700;text-decoration: none;} 
+
+a.stdown:link    {FONT-SIZE: 12px;COLOR: #0E3070 ;text-decoration: underline;}
+a.stdown:visited {FONT-SIZE: 12px;COLOR: #0E3070;text-decoration: underline;}
+a.stdown:hover   {FONT-SIZE: 12px;COLOR: #D18700;text-decoration: none;} 
+
+.MenuLink:hover, .MenuLink:active
+{
+	FONT-SIZE: 12px;COLOR: #D18700
+}
+//-->
+</style>
