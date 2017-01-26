@@ -1,0 +1,5 @@
+Get-ChildItem "C:\Users\YoniWas\Desktop\SEM13\yonixw.github.io\grades_filtered" -Filter *.html -rec | 
+Foreach-Object {
+    (Get-Content $_.FullName) | Set-Content -Encoding utf8 $_.FullName
+    echo $_.FullName
+}
