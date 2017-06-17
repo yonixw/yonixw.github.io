@@ -22,7 +22,8 @@
                 var clientID = $('#clientID').val();
                 var scopes = $('#scopes').val();
 
-                var url = 'https://api.twitch.tv/kraken/oauth2/authorize?response_type=token&client_id=' + clientID + '&redirect_uri=https://yonixw.github.io/twitchapp.html&scope=' + encodeURIComponent(scopes);
+                var url = 'https://api.twitch.tv/kraken/oauth2/authorize?response_type=token&client_id=' + clientID 
+                    + '&redirect_uri=https://yonixw.github.io/twitchapp2.html&scope=' + encodeURIComponent(scopes);
 
                 document.location = url;
             }
@@ -71,7 +72,7 @@
                                     <label>Premissions</label>
                                     <input class="span9" type="text" id="scopes" readonly="readonly" value="chat_login user_subscriptions">
                                     <label>Redirect URL:</label>
-                                    <code>https://yonixw.github.io/twitchapp.html</code><br /><br />
+                                    <code>https://yonixw.github.io/twitchapp2.html</code><br /><br />
                                     <div style="padding-bottom:10px;">
                                         <a href="#" onClick="sendRequest();"><img src="connect_dark.png" /></a>
                                     </div>
