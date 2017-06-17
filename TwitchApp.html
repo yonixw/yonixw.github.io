@@ -1,0 +1,105 @@
+﻿
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Twitch OAuth Token Generator</title>
+    <link href="cosmo.css" rel="stylesheet" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" language="javascript">
+            $(document).ready(function() {
+                var oauthHash = location.hash.substr(1);
+                var accessToken = oauthHash.substr(oauthHash.indexOf('access_token=')).split('&')[0].split('=')[1];
+
+                if (accessToken) {
+                    $("#infoTable").hide();
+                    $("#passwordTable").show();
+                    $("#tokenDisplay").html(accessToken);
+                }
+            });
+
+            var sendRequest = function (argument) {
+                var clientID = $('#clientID').val();
+                var scopes = $('#scopes').val();
+
+                var url = 'https://api.twitch.tv/kraken/oauth2/authorize?response_type=token&client_id=' + clientID + '&redirect_uri=https://yonixw.github.io/twitchapp.html&scope=' + encodeURIComponent(scopes);
+
+                document.location = url;
+            }
+    </script>
+    <style>
+        #tmiPasswordField {
+            cursor: default !important;
+        }
+
+        #tmiExample {
+            display: block;
+        }
+    </style>
+</head>
+<body style="padding-top: 20px;">
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <div style="width:600px;margin:auto;">
+                    <table class="table table-bordered table-striped" id="passwordTable" style="display:none;">
+                        <tr>
+                            <th>Twitch OAuth Token Generator</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="text-align:center;padding-bottom:10px;">
+                                    <p>
+                                        Your OAuth token:
+                                    </p>
+                                    <code id="tokenDisplay"></code>
+                                    <br />
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <table class="table table-bordered table-striped" id="infoTable">
+                        <tr>
+                            <th>Twitch OAuth Token Generator</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="well">
+                                    
+                                    <label>Client ID</label>
+                                    <input class="span9" type="text" id="clientID" readonly="readonly" value="ml69yn181ijm5z23i9sampwzt77caa">
+                                    <label>Premissions</label>
+                                    <input class="span9" type="text" id="scopes" readonly="readonly" value="chat_login user_subscriptions">
+                                    <label>Redirect URL:</label>
+                                    <code>https://yonixw.github.io/twitchapp.html</code><br /><br />
+                                    <div style="padding-bottom:10px;">
+                                        <a href="#" onClick="sendRequest();"><img src="connect_dark.png" /></a>
+                                    </div>
+                                    <p>
+                                        <small>
+                                            By accepting you give this app permission to check your subscription and access chat.
+                                        </small>
+                                    </p>
+                                    <p>
+                                        <small>
+                                            This application uses the <a href="https://github.com/justintv/Twitch-API/blob/master/authentication.md#implicit-grant" target="_blank">implicit grant flow</a> for the Twitch API to retrieve your token. This means that your token is only ever visible to your browser and not our server.
+                                        </small>
+                                    </p>
+                                    <p>
+                                        <small>
+                                            This wizard was taken from https://twitchapps.com/tokengen/ all rights are reseverd by them.
+                                        </small>
+                                    </p>
+
+
+                                   
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
